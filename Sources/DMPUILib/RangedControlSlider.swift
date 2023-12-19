@@ -13,7 +13,7 @@ public struct RangedControlSlider: View {
     @Binding var progress: Int
     @State var maxHeight: Int = 400
     @State var maxWidth: CGFloat = 150
-    @State var sliderNumbers: Int = 15
+    @State var sliderNumbers: Int = 14
     @State var tint: Color = Color.blue
     @State var padding: CGFloat = 0.5
     
@@ -62,7 +62,8 @@ public struct RangedControlSlider: View {
             .gesture(
                 SpatialTapGesture()
                     .onEnded { value in
-                        self.getSliderValue(value.location)
+                        let newValue = CGPoint(x: value.location.x, y: value.location.y - height)
+                        self.getSliderValue(newValue)
                     }
             )
             .onAppear {
