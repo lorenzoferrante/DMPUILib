@@ -36,6 +36,7 @@ public struct RangedControlSlider: View {
         self.padding = padding
         self.isOnArray = Array(repeating: true, count: sliderNumbers)
         self._progress = progress
+        self.sliderNumbers = sliderNumbers
     }
     
     public var body: some View {
