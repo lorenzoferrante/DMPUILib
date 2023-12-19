@@ -13,7 +13,7 @@ public struct RangedControlSlider: View {
     @Binding var progress: Int
     @State var maxHeight: Int = 400
     @State var maxWidth: CGFloat = 150
-    @State var sliderNumbers: Int = 14
+    @State var sliderNumbers: Int
     @State var tint: Color = Color.blue
     @State var padding: CGFloat = 0.5
     
@@ -26,7 +26,7 @@ public struct RangedControlSlider: View {
     init(
         maxHeight: Int = 400,
         maxWidth: CGFloat = 150,
-        sliderNumbers: Int = 15,
+        sliderNumbers: Int,
         padding: CGFloat = 0.5,
         tint: Color = .blue,
         progress: Binding<Int>
@@ -114,6 +114,6 @@ public struct RangedControlSlider: View {
 
 @available(iOS 17.0, *)
 #Preview {
-    RangedControlSlider(maxHeight: 400, maxWidth: 150, progress: .constant(5))
+    RangedControlSlider(maxHeight: 400, maxWidth: 150, sliderNumbers: 15, progress: .constant(5))
 }
 
