@@ -14,7 +14,7 @@ public struct DMPSliderView: View {
     
     @State var maxHeight: Int = 400
     @State var maxWidth: CGFloat = 150
-    @State var sliderNumbers: Int = 15
+    @State var sliderNumbers: Int
     @State var tint: Color = Color.blue
     @State var cornerRadius: CGFloat = 30.0
     @State var padding: CGFloat = 0.5
@@ -24,7 +24,7 @@ public struct DMPSliderView: View {
         value: Binding<Int>,
         maxHeight: Int = 400,
         maxWidth: CGFloat = 150,
-        sliderNumbers: Int = 15,
+        sliderNumbers: Int,
         tint: Color = .blue,
         cornerRadius: CGFloat = 30.0,
         padding: CGFloat = 0.5,
