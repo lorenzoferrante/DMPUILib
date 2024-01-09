@@ -112,7 +112,8 @@ public struct RangedControlSlider: View {
     }
     
     func convertValueToPoint(_ sliderValue: Int) -> CGPoint {
-        AppLogger.shared.log("\(CGFloat(maxHeight) - (CGFloat(sliderValue) * height))", level: .info, className: className, function: #function)
+        
+        AppLogger.shared.log("\(sliderValue) - \(CGFloat(maxHeight) - (CGFloat(sliderValue) * height))", level: .info, className: className, function: #function)
         return CGPoint(x: 0, y: CGFloat(maxHeight) - (CGFloat(sliderValue) * height))
     }
 }
