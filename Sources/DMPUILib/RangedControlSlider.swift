@@ -9,6 +9,11 @@ import SwiftUI
 
 @available(iOS 17.0, *)
 public struct RangedControlSlider: View {
+    
+    var className: String {
+        let thisType = type(of: self)
+        return String(describing: thisType)
+    }
        
     @Binding var progress: Int
     @State var maxHeight: Int = 400
@@ -107,7 +112,7 @@ public struct RangedControlSlider: View {
     }
     
     func convertValueToPoint(_ sliderValue: Int) -> CGPoint {
-        print("\(CGFloat(maxHeight) - (CGFloat(sliderValue) * height))")
+        AppLogger.shared.log("\(CGFloat(maxHeight) - (CGFloat(sliderValue) * height))", level: .info, className: className, function: #function)
         return CGPoint(x: 0, y: CGFloat(maxHeight) - (CGFloat(sliderValue) * height))
     }
 }
